@@ -9,5 +9,9 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  const current = Date.now();
+  while (Date.now() - current < 500) { } // 測試loading
+  res.setHeader('Cache-Control', 'no-store')
+    .status(200)
+    .json({ name: 'John Doe' })
 }

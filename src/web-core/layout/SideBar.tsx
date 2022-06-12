@@ -7,7 +7,7 @@ import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import { ExpandMore, StarBorder } from '@mui/icons-material';
+import { ExpandMore } from '@mui/icons-material';
 import Link from 'next/link';
 
 export type MenuOptions = {
@@ -46,7 +46,7 @@ function MenuItem(props: MenuItemProps) {
     setOpen(matched);
   }, [matched]);
   return (<>
-    <ListItemButton {...buttonProps}>
+    <ListItemButton {...buttonProps} selected={matched}>
       <Link href={fullUrl}>
         <a style={{ display: 'flex', flexGrow: 1 }} onClick={() => setOpen(!open)}>
           <ListItemIcon>

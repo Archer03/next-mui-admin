@@ -16,12 +16,16 @@
     "@mui/material": "^5.8.3",
     "@mui/x-data-grid": "^5.12.1",
     "@mui/x-date-pickers": "5.0.0-alpha.6",
+    "@okta/okta-auth-js": "^6.6.2",
+    "@okta/okta-react": "^6.5.0",
     "axios": "^0.27.2",
     "moment": "^2.29.3",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-hook-form": "^7.32.0"
+    "react-hook-form": "^7.32.0",
+    "react-intl": "^6.0.4",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@types/node": "17.0.42",

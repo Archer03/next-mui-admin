@@ -5,6 +5,7 @@ import MENU_OPTIONS from './MENU_OPTIONS'
 import I18n from '../web-core/i18n'
 
 function MyApp({ Component, pageProps }: AppProps) {
+
   return <I18n>
     <Layout menus={MENU_OPTIONS}>
       <Component {...pageProps} />

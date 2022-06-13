@@ -46,6 +46,7 @@ function MenuItem(props: MenuItemProps) {
   useEffect(() => {
     setOpen(matched);
   }, [matched]);
+
   return (<>
     <ListItemButton {...buttonProps} selected={matched}>
       <Link href={fullUrl}>

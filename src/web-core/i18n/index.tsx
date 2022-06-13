@@ -21,7 +21,6 @@ export const LangContext = React.createContext<(locale: langs) => void>(() => { 
 export default function (props: React.PropsWithChildren) {
   const [locale, setLocale] = useState<langs>('en');
   const messages = loadLocaleData(locale);
-  console.log(locale, messages);
   return (
     <LangContext.Provider value={setLocale}>
       <IntlProvider

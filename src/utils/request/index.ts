@@ -43,6 +43,6 @@ const showLoading = () => {
 }
 
 const hideLoading = () => {
-  const temp = document.getElementById('loadingGlobalDiv')
-  document.body.removeChild(temp!);
+  const div = document.getElementById('loadingGlobalDiv')
+  document.body.removeChild(div!);
 }

@@ -8,28 +8,28 @@ export default [
   {
     url: "/requestDemo",
     icon: CloudSyncTwoToneIcon,
-    text: "Request Demo",
+    i18nKey: "menu.request.demo",
   },
   {
     url: "/formDemo",
     icon: AppRegistrationTwoToneIcon,
-    text: "Form Demo",
+    i18nKey: "menu.form.demo",
     childRoutes: [
       {
         url: "validation",
         icon: FactCheckTwoToneIcon,
-        text: "Validation",
+        i18nKey: "menu.form.validation",
       }
     ]
   },
   {
     url: "/table",
     icon: ViewListTwoToneIcon,
-    text: "Table",
+    i18nKey: "menu.table",
   },
   {
     url: "/okta",
     icon: ExitToAppTwoToneIcon,
-    text: "Okta",
+    i18nKey: "menu.okta",
   }
 ]

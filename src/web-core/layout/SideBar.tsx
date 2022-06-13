@@ -9,11 +9,12 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { ExpandMore } from '@mui/icons-material';
 import Link from 'next/link';
+import { FormattedMessage } from 'react-intl';
 
 export type MenuOptions = {
   url: string,
   icon: any,
-  text: React.ReactNode,
+  i18nKey: string,
   childRoutes?: MenuOptions[]
 }
 
@@ -37,7 +38,7 @@ type MenuItemProps = {
 } & ListItemButtonProps & MenuOptions;
 
 function MenuItem(props: MenuItemProps) {
-  const { url, icon, text, childRoutes, parentUrl, ...buttonProps } = props;
+  const { url, icon, i18nKey, childRoutes, parentUrl, ...buttonProps } = props;
   const fullUrl = parentUrl ? `${parentUrl}/${url}` : url;
   const router = useRouter();
   const matched = router.asPath.startsWith(fullUrl);
@@ -52,7 +53,7 @@ function MenuItem(props: MenuItemProps) {
           <ListItemIcon>
             {React.createElement(icon)}
           </ListItemIcon>
-          <ListItemText primary={text} />
+          <ListItemText primary={<FormattedMessage id={i18nKey} />} />
           {childRoutes ? open ? <ExpandLess /> : <ExpandMore /> : null}
         </a>
       </Link>

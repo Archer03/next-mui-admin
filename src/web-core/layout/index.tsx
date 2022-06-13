@@ -4,6 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Drawer from '@mui/material/Drawer';
 import SideBar, { MenuOptions } from './SideBar';
 import Header from './Header';
+import Container from '@mui/material/Container';
 
 const drawerWidth = 240;
 
@@ -12,10 +13,9 @@ type LayoutProps = React.PropsWithChildren<{
 }>
 export default function Layout(props: LayoutProps) {
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <Header />
-      <Toolbar sx={{ width: '100%' }} />
       <Drawer
         variant="permanent"
         sx={{
@@ -27,8 +27,11 @@ export default function Layout(props: LayoutProps) {
         <Toolbar />
         <SideBar menus={props.menus} />
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        {props.children}
+      <Box component="main" sx={{ flexGrow: 1 }}>
+        <Toolbar />
+        <Container maxWidth={false} sx={{ p: 3 }} >
+          {props.children}
+        </Container>
       </Box>
     </Box>
   );

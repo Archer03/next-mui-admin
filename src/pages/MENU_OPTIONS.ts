@@ -1,6 +1,7 @@
 import CloudSyncTwoToneIcon from '@mui/icons-material/CloudSyncTwoTone';
 import AppRegistrationTwoToneIcon from '@mui/icons-material/AppRegistrationTwoTone';
 import FactCheckTwoToneIcon from '@mui/icons-material/FactCheckTwoTone';
+import ViewListTwoToneIcon from '@mui/icons-material/ViewListTwoTone';
 
 export default [
   {
@@ -19,5 +20,10 @@ export default [
         text: "Validation",
       }
     ]
+  },
+  {
+    url: "/table",
+    icon: ViewListTwoToneIcon,
+    text: "Table Demo",
   }
 ]

@@ -3,6 +3,7 @@ import AppRegistrationTwoToneIcon from '@mui/icons-material/AppRegistrationTwoTo
 import FactCheckTwoToneIcon from '@mui/icons-material/FactCheckTwoTone';
 import ViewListTwoToneIcon from '@mui/icons-material/ViewListTwoTone';
 import ExitToAppTwoToneIcon from '@mui/icons-material/ExitToAppTwoTone';
+import StoreMallDirectoryTwoToneIcon from '@mui/icons-material/StoreMallDirectoryTwoTone';
 
 export default [
   {
@@ -26,6 +27,11 @@ export default [
     url: "/table",
     icon: ViewListTwoToneIcon,
     i18nKey: "menu.table",
+  },
+  {
+    url: "/reduxDemo",
+    icon: StoreMallDirectoryTwoToneIcon,
+    i18nKey: "menu.redux",
   },
   {
     url: "/okta",

@@ -8,13 +8,13 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { ExpandMore } from '@mui/icons-material';
-import Link from 'next/link';
 import { FormattedMessage } from 'react-intl';
 
 export type MenuOptions = {
   url: string,
   icon: any,
   i18nKey: string,
+  isPage?: boolean,
   childRoutes?: MenuOptions[]
 }
 
@@ -38,26 +38,26 @@ type MenuItemProps = {
 } & ListItemButtonProps & MenuOptions;
 
 function MenuItem(props: MenuItemProps) {
-  const { url, icon, i18nKey, childRoutes, parentUrl, ...buttonProps } = props;
+  const { url, icon, i18nKey, childRoutes, parentUrl, isPage = true, ...buttonProps } = props;
   const fullUrl = parentUrl ? `${parentUrl}/${url}` : url;
   const router = useRouter();
   const matched = router.asPath.startsWith(fullUrl);
   const [open, setOpen] = useState(false);
+  const handleItemClick = () => {
+    isPage && router.push(fullUrl);
+    setOpen(!open);
+  }
   useEffect(() => {
     setOpen(matched);
   }, [matched]);
 
   return (<>
-    <ListItemButton {...buttonProps} selected={matched}>
-      <Link href={fullUrl}>
-        <a style={{ display: 'flex', flexGrow: 1 }} onClick={() => setOpen(!open)}>
-          <ListItemIcon>
-            {React.createElement(icon)}
-          </ListItemIcon>
-          <ListItemText primary={<FormattedMessage id={i18nKey} />} />
-          {childRoutes ? open ? <ExpandLess /> : <ExpandMore /> : null}
-        </a>
-      </Link>
+    <ListItemButton {...buttonProps} selected={matched} onClick={handleItemClick}>
+      <ListItemIcon>
+        {React.createElement(icon)}
+      </ListItemIcon>
+      <ListItemText primary={<FormattedMessage id={i18nKey} />} />
+      {childRoutes ? open ? <ExpandLess /> : <ExpandMore /> : null}
     </ListItemButton>
     {childRoutes &&
       <Collapse in={open} timeout="auto" unmountOnExit>

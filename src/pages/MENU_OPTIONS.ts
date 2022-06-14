@@ -15,6 +15,7 @@ export default [
     url: "/formDemo",
     icon: AppRegistrationTwoToneIcon,
     i18nKey: "menu.form.demo",
+    isPage: false,
     childRoutes: [
       {
         url: "validation",

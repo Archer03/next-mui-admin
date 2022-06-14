@@ -1,3 +1,4 @@
+import { Stack } from '@mui/material'
 import Button from '@mui/material/Button'
 import React from 'react'
 import { useAppDispatch, useAppSelector } from '../../redux'
@@ -8,20 +9,17 @@ export default function Counter() {
   const dispatch = useAppDispatch()
 
   return (
-    <div>
-      <Button
-        aria-label="Increment value"
-        onClick={() => dispatch(increment())}
-      >
+    <Stack direction="row" sx={{alignItems: 'center'}}>
+      <Button onClick={() => dispatch(increment())} >
         Increment
       </Button>
       <span>{count}</span>
-      <Button
-        aria-label="Decrement value"
-        onClick={() => dispatch(decrement())}
-      >
+      <Button onClick={() => dispatch(decrement())} >
         Decrement
       </Button>
-    </div>
+      <Button variant="contained" onClick={() => dispatch({ type: 'INCREMENT_ASYNC', payload: 10 })} >
+        1s Async
+      </Button>
+    </Stack>
   )
 }

@@ -4,7 +4,7 @@ import Loading from "../../components/Loading";
 import { alertError } from "../../components/showSnackbar";
 
 const $http = axios.create({
-  baseURL: 'http://localhost:3000/api/',
+  baseURL: 'http://localhost:3000/',
   timeout: 1000
 });
 

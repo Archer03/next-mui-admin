@@ -5,12 +5,12 @@ import $http from "../../utils/request";
 
 export default function () {
   const requestSuccess = () => {
-    $http.get('hello').then(res => {
+    $http.get('hello.json').then(() => {
       alertSuccess('This is hello success!');
     })
   }
   const requestFail = () => {
-    $http.get('hello1').then(res => console.log(res));
+    $http.get('hello1.json'); // not exists
   }
   return <>
     <Stack spacing={2} direction="row">

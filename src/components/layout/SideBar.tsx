@@ -5,10 +5,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
-import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { ExpandMore } from '@mui/icons-material';
 import { FormattedMessage } from 'react-intl';
+import { useMatch, useNavigate } from 'react-router-dom';
 
 export type MenuOptions = {
   url: string,
@@ -40,11 +40,11 @@ type MenuItemProps = {
 function MenuItem(props: MenuItemProps) {
   const { url, icon, i18nKey, childRoutes, parentUrl, isPage = true, ...buttonProps } = props;
   const fullUrl = parentUrl ? `${parentUrl}/${url}` : url;
-  const router = useRouter();
-  const matched = router.asPath.startsWith(fullUrl);
+  const matched = !!useMatch(fullUrl);
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleItemClick = () => {
-    isPage && router.push(fullUrl);
+    isPage && navigate(fullUrl);
     setOpen(!open);
   }
   useEffect(() => {

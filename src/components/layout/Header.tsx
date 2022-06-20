@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { useContext, useState } from 'react';
-import { LangContext } from '../i18n';
+import { LangContext } from '../../utils/i18n';
 
 export default function () {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

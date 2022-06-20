@@ -76,7 +76,7 @@ const FormItem = (props: any) => {
         });
       }),
     });
-  } else {
+  } else { // radio
     fieldComp = React.cloneElement(children, { onChange, defaultValue });
   }
 

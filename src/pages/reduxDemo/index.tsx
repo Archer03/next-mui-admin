@@ -1,6 +1,5 @@
 import { Stack } from '@mui/material'
 import Button from '@mui/material/Button'
-import React from 'react'
 import { useAppDispatch, useAppSelector } from '../../redux'
 import { decrement, increment } from '../../redux/counter/counterSlice'
 

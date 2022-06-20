@@ -8,7 +8,7 @@ import Radio from '@mui/material/Radio';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import { MUIForm, MUIFormItem } from '../../../web-core/MUIFormItem';
+import { MUIForm, MUIFormItem } from '../../../components/MUIForm';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
